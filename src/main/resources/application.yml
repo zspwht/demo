@@ -1,0 +1,11 @@
+#启动环境
+spring:
+  profiles:
+    active: dev,test
+
+
+mrbind:
+  blog:
+    name: mrbind's blog
+    title: spring boot
+    wholeTitle: ${mrbind.blog.name} -- ${mrbind.blog.title}
