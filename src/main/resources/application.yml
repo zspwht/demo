@@ -2,8 +2,8 @@
 spring:
   profiles:
     active: dev,test
-
-
+  thymeleaf:
+    cache: false
 mrbind:
   blog:
     name: mrbind's blog

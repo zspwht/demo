@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 //@RestController
 @SpringBootApplication
-@EnableConfigurationProperties({ConfigBean.class, TestConfigBean.class})
+//@EnableConfigurationProperties({ConfigBean.class, TestConfigBean.class})
 public class DemoApplication {
 	/*@RequestMapping("/")
 	public String index(){
