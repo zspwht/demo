@@ -19,4 +19,19 @@ public class StudentServiceImpl implements StudentService {
     public Student queryFindBySno(String sno) {
         return this.studentMapper.queryBySno(sno);
     }
+
+    @Override
+    public int insert(Student student) {
+        return studentMapper.insert(student);
+    }
+
+    @Override
+    public int deleteBySno(String sno) {
+        return studentMapper.delete(sno);
+    }
+
+    @Override
+    public int update(Student student) {
+        return studentMapper.update(student);
+    }
 }
