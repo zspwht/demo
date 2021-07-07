@@ -20,8 +20,8 @@ public class IndexController {
     private ConfigBean configBean;
     @Autowired
     private TestConfigBean testConfigBean;
-    @RequestMapping("/")
+   /* @RequestMapping("/")
     public String index(){
         return  testConfigBean.getName()+ "," +testConfigBean.getAge();
-    }
+    }*/
 }

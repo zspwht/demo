@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.first.UserMapper">
+    <resultMap id="baseMap" type="com.example.demo.bean.User">
+        <id column="id" property="id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+        <result column="userName" property="userName" jdbcType="VARCHAR" javaType="java.lang.String" />
+        <result column="passwd" property="password" jdbcType="VARCHAR" javaType="java.lang.String" />
+        <result column="createTime" property="createTime" jdbcType="DATE" javaType="java.util.Date" />
+        <result column="updateTime" property="updateTime" jdbcType="DATE" javaType="java.util.Date" />
+        <result column="status" property="status" jdbcType="CHAR" javaType="java.lang.Integer" />
+    </resultMap>
+
+    <select id="findByUserName" resultMap="baseMap">
+        select id,userName,passwd,createTime,updateTime,status from t_user
+        where userName = #{userName}
+    </select>
+</mapper>

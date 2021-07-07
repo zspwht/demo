@@ -19,6 +19,9 @@ class DemoApplicationTests {
 	StudentService studentService;
 	@Autowired
 	private UserMapper userMapper;
+
+	@Autowired
+	private com.example.demo.mapper.first.UserMapper userMapper1;
 	@Test
 	void contextLoads() {
 
@@ -39,6 +42,7 @@ class DemoApplicationTests {
 
 		Student student1 = studentService.queryFindBySno("009");
 		System.out.println("学号" + student1.getSno() + "的学生姓名为：" + student1.getSname());
+
 /*
 		Student student2 = studentService.queryFindBySno("001");
 		System.out.println("学号" + student2.getSno() + "的学生姓名为：" + student2.getSname());*/
@@ -47,5 +51,7 @@ class DemoApplicationTests {
 		student.setSname("ssss");
 		student.setSno("009");
 		studentService.insert(student);*/
+		User test = userMapper1.findByUserName("test");
+		System.out.println(test);
 	}
 }

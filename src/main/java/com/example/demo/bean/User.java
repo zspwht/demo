@@ -1,6 +1,9 @@
 package com.example.demo.bean;
 
 import lombok.Data;
+import org.apache.ibatis.type.Alias;
+
+import java.util.Date;
 
 /**
  * @Author zsp
@@ -9,6 +12,13 @@ import lombok.Data;
  */
 @Data
 public class User {
-    private Long id;
-    private String name;
+    /*private Long id;
+    private String name;*/
+
+    private Integer id;
+    private String userName;
+    private String password;
+    private Date createTime;
+    private Date updateTime;
+    private Integer status;
 }

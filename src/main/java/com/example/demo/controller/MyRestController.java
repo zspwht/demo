@@ -18,7 +18,7 @@ public class MyRestController {
     public User getUser(@PathVariable Long user){
         return null;
     }
-    @RequestMapping(value = "/{user}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{user11}",method = RequestMethod.DELETE)
     public User deleteUser(@PathVariable Long user){
         return null;
     }

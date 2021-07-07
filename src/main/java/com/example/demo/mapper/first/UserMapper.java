@@ -1,4 +1,4 @@
-package com.example.demo.mapper.second;
+package com.example.demo.mapper.first;
 
 import com.example.demo.bean.User;
 import org.apache.ibatis.annotations.Mapper;
@@ -6,11 +6,10 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @Author zsp
- * @Date 2021/5/27 16:00
+ * @Date 2021/6/2 15:35
  * @Version 1.0
  */
-@Repository("UserMapper")
-@Mapper
+@Repository
 public interface UserMapper {
-    int insert(User user);
+    User findByUserName(String userName);
 }
