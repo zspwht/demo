@@ -33,9 +33,9 @@ public class LoginController {
 
     @PostMapping("/login")
     @ResponseBody
-    public Result login(String userName,String password){
+    public Result login(String userName,String password,boolean rememberMe){
         password = MD5Utils.encrypt(userName,password);
-        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(userName,password);
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(userName,password,rememberMe);
         Subject subject = SecurityUtils.getSubject();
         try {
             subject.login(usernamePasswordToken);
@@ -62,5 +62,10 @@ public class LoginController {
         User user = (User)SecurityUtils.getSubject().getPrincipal();
         model.addAttribute("user",user);
         return "index";
+    }
+
+    @GetMapping("/403")
+    public String forbid(){
+        return "403";
     }
 }

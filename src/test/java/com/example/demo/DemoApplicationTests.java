@@ -1,13 +1,19 @@
 package com.example.demo;
 
+import com.example.demo.bean.Permission;
+import com.example.demo.bean.Role;
 import com.example.demo.bean.Student;
 import com.example.demo.bean.User;
 import com.example.demo.mapper.first.StudentMapper;
+import com.example.demo.mapper.first.UserPermissonMapper;
+import com.example.demo.mapper.first.UserRoleMapper;
 import com.example.demo.mapper.second.UserMapper;
 import com.example.demo.service.StudentService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
 
 @SpringBootTest
 class DemoApplicationTests {
@@ -20,6 +26,10 @@ class DemoApplicationTests {
 	@Autowired
 	private UserMapper userMapper;
 
+	@Autowired
+	UserRoleMapper userRoleMapper;
+	@Autowired
+	UserPermissonMapper userPermissonMapper;
 	@Autowired
 	private com.example.demo.mapper.first.UserMapper userMapper1;
 	@Test
@@ -40,8 +50,8 @@ class DemoApplicationTests {
 		user.setName("xiaoli");
 		userMapper.insert(user);*/
 
-		Student student1 = studentService.queryFindBySno("009");
-		System.out.println("学号" + student1.getSno() + "的学生姓名为：" + student1.getSname());
+		/*Student student1 = studentService.queryFindBySno("009");
+		System.out.println("学号" + student1.getSno() + "的学生姓名为：" + student1.getSname());*/
 
 /*
 		Student student2 = studentService.queryFindBySno("001");
@@ -53,5 +63,9 @@ class DemoApplicationTests {
 		studentService.insert(student);*/
 		User test = userMapper1.findByUserName("test");
 		System.out.println(test);
+		List<Role> test1 = userRoleMapper.findByUserName("mrbird");
+		System.out.println(test1);
+		List<Permission> test2 = userPermissonMapper.findByUserName("mrbird");
+		System.out.println(test2);
 	}
 }
