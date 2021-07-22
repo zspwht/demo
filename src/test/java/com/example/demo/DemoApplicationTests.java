@@ -9,6 +9,7 @@ import com.example.demo.mapper.first.UserPermissonMapper;
 import com.example.demo.mapper.first.UserRoleMapper;
 import com.example.demo.mapper.second.UserMapper;
 import com.example.demo.service.StudentService;
+import com.example.demo.task.TaskExecutorExample;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -32,6 +33,9 @@ class DemoApplicationTests {
 	UserPermissonMapper userPermissonMapper;
 	@Autowired
 	private com.example.demo.mapper.first.UserMapper userMapper1;
+
+	@Autowired
+	TaskExecutorExample taskExecutorExample;
 	@Test
 	void contextLoads() {
 
@@ -61,11 +65,15 @@ class DemoApplicationTests {
 		student.setSname("ssss");
 		student.setSno("009");
 		studentService.insert(student);*/
-		User test = userMapper1.findByUserName("test");
-		System.out.println(test);
-		List<Role> test1 = userRoleMapper.findByUserName("mrbird");
-		System.out.println(test1);
-		List<Permission> test2 = userPermissonMapper.findByUserName("mrbird");
-		System.out.println(test2);
+//		User test = userMapper1.findByUserName("test");
+//		System.out.println(test);
+//		List<Role> test1 = userRoleMapper.findByUserName("mrbird");
+//		System.out.println(test1);
+//		List<Permission> test2 = userPermissonMapper.findByUserName("mrbird");
+//		System.out.println(test2);
+		long startTime = System.currentTimeMillis();
+		taskExecutorExample.printMessage();
+		long endTime = System.currentTimeMillis();
+		System.out.println("所用时间："+(endTime-startTime));
 	}
 }
